@@ -25,10 +25,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
       - name: Install dependencies
         run: npm install --only=production
 
-      # Runs a single command using the runners shell
       - name: Build for prod
         run: NODE_ENV=prod npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    
+    steps:
+      
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2.2.3
+        

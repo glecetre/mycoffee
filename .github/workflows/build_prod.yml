@@ -39,5 +39,5 @@ jobs:
       - name: Publish artifact
         uses: actions/upload-artifact@v2.2.3
         with:
-          path: ${{ github.workflow }}/build/
+          path: ${{ github.workspace }}/build/
           if-no-files-found: error

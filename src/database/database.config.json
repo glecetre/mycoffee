@@ -1,0 +1,8 @@
+{
+    "name": "my-coffee-choice-db",
+    "version": 2,
+    "tables": {
+        "reviews": "reviews",
+        "profiles": "profiles"
+    }
+}

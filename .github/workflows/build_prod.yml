@@ -37,6 +37,10 @@ jobs:
     steps:
       - name: test
         run: ls
+        
+      - name: test2
+        run: echo "`ls`"
+
 
       - name: Publish artifact
         uses: actions/upload-artifact@v2.2.3

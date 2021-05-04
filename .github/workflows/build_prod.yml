@@ -36,3 +36,15 @@ jobs:
         with:
           path: ${{ github.workspace }}/build/
           if-no-files-found: error
+          
+  deploy-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: ${{ github.workspace }}/build/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

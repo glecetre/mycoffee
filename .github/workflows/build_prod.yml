@@ -34,6 +34,7 @@ jobs:
       - name: Publish artifact
         uses: actions/upload-artifact@v2.2.3
         with:
+          name: build-folder
           path: ${{ github.workspace }}/build/
           if-no-files-found: error
           
@@ -41,11 +42,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
+      - name: Download build folder
+        uses: actions/download-artifact@v2.0.9
+        with:
+          name: build-folder
+          path: build
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: ${{ github.workspace }}/build/
+          build_dir: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

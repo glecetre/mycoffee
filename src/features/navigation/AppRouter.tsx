@@ -10,7 +10,7 @@ import { ROUTE_ORDERED_PAGES } from './appPages'
 
 export function AppRouter() {
     return (
-        <Router>
+        <Router basename='/mycoffee'>
             <Switch>
                 {ROUTE_ORDERED_PAGES.map((page) => (
                     <Route path={page.paths} exact={page.exactMatch} key={page.paths.join()}>

@@ -4,6 +4,8 @@ import { FileInput, FormActions, Input, RatingInput, Submit, Textarea } from 'sr
 import { SectionHeading } from 'src/components/Typography';
 import { IReviewFormModel } from './IReviewFormModel';
 
+import ratingIcon from 'src/assets/coffee-bean-brown.svg'
+
 export function NewReviewForm(props: INewReviewFormProps) {
     const form = useForm<IReviewFormModel>();
 
@@ -22,7 +24,7 @@ export function NewReviewForm(props: INewReviewFormProps) {
                     <SectionHeading>Additional information</SectionHeading>
                     <Input label='Shop name' register={form.register('shop')} />
                     <Input label='Price' type='number' step="0.01" appendix='€ / 100 g' register={form.register('price', { valueAsNumber: true })} />
-                    <RatingInput label='Rating' icon='/assets/coffee-bean-brown.svg' register={form.register('rating', { valueAsNumber: true })} />
+                    <RatingInput label='Rating' icon={ratingIcon} register={form.register('rating', { valueAsNumber: true })} />
                 </div>
 
                 <FormActions>

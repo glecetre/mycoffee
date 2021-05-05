@@ -3,6 +3,8 @@ import { Rating } from 'src/components/Common'
 import { Link } from 'src/features/navigation'
 import { IReview } from './IReview'
 
+import ratingIcon from 'src/assets/coffee-bean.svg'
+
 export function ReviewCard(props: IReviewCardProps) {
     return (
         <Link href={props.href}>
@@ -29,7 +31,7 @@ export function ReviewCard(props: IReviewCardProps) {
                         { 'w-3/4': props.isSmall },
                         { 'w-2/5 mt-1': !props.isSmall },
                     )}>
-                        <Rating value={props.review.rating} icon='/assets/coffee-bean.svg' isLight />
+                        <Rating value={props.review.rating} icon={ratingIcon} isLight />
                     </div>
                 </div>
             </div>

@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from 'react'
 import { IProfile } from 'src/features/profile'
 import { AppContext } from 'src/helpers'
 
+import defaultProfilePicture from 'src/assets/profile-picture.png'
+
 const defaultProfile: IProfile = {
     name: 'Unnamed',
-    picture: '/assets/profile-picture.png',
+    picture: defaultProfilePicture,
 }
 
 export function useProfile(): IProfile {

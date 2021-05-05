@@ -1,6 +1,7 @@
 {
   "name": "my-coffee",
   "version": "0.1.0",
+  "homepage": "https://glecetre.github.io/mycoffee",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.2",
